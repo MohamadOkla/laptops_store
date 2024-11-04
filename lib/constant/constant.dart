@@ -1,3 +1,6 @@
 import 'package:flutter/material.dart';
+//to professional way save colors in class as static & const
+class AppColors{
 
-Color mainColor = const Color.fromARGB(255, 226, 147, 30);
+ static const Color mainColor =  Color.fromARGB(255, 226, 147, 30);
+}

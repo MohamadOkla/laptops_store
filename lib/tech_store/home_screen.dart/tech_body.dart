@@ -17,7 +17,8 @@ class _TechBodyState extends State<TechBody> {
     return const Scaffold(
         // ignore: unnecessary_const
         body: SingleChildScrollView(
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start, children: [
         SizedBox(
           height: 10,
         ),
@@ -29,12 +30,7 @@ class _TechBodyState extends State<TechBody> {
         SizedBox(
           height: 10,
         ),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [LenovoContainer()],
-          ),
-        ),
+        LenovoContainer(),
         SizedBox(
           height: 10,
         ),
@@ -46,12 +42,8 @@ class _TechBodyState extends State<TechBody> {
         SizedBox(
           height: 10,
         ),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [HpContainer()],
-          ),
-        ),
+        // Same as before
+        HpContainer(),
         SizedBox(
           height: 10,
         ),
@@ -63,12 +55,7 @@ class _TechBodyState extends State<TechBody> {
         SizedBox(
           height: 10,
         ),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [ToshibaContainer()],
-          ),
-        ),
+        ToshibaContainer(),
         SizedBox(
           height: 10,
         ),
@@ -80,12 +67,7 @@ class _TechBodyState extends State<TechBody> {
         SizedBox(
           height: 10,
         ),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [(DellContainer())],
-          ),
-        ),
+        DellContainer(),
       ]),
     ));
   }
