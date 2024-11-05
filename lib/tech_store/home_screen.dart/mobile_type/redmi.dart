@@ -11,7 +11,7 @@ class RedmiContainer extends StatefulWidget {
 class _RedmiContainerState extends State<RedmiContainer> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return const SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [

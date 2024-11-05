@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: Colors.blueAccent,
         ),
         //A custom drawer widget might be the best option
-        drawer: CustomDrawer(),
+        drawer: const CustomDrawer(),
         body: const TechBody());
   }
 }
@@ -84,7 +84,7 @@ class CustomDrawer extends StatelessWidget {
           ListTile(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => ViewMobiles(),
+                builder: (context) => const ViewMobiles(),
               ));
             },
             title: const Text(

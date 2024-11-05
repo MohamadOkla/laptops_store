@@ -11,7 +11,7 @@ class InfinixContainer extends StatefulWidget {
 class _InfinixContainerState extends State<InfinixContainer> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return const SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [

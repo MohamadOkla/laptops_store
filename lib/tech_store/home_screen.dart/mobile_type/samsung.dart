@@ -11,7 +11,7 @@ class SamsungContainer extends StatefulWidget {
 class _SamsungContainerState extends State<SamsungContainer> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return const SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [

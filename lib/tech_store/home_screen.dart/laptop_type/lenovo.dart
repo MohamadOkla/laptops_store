@@ -6,13 +6,13 @@ class LenovoContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return const SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
           CustomCard(
             urlImage:
-                'https://goldentech.com.sa/media/catalog/product/cache/946540b9ae449ff2231a6d11d8e12a8d/l/a/labtop_lenovo_thinkpad_e14_gen_4_intel_core_i5-1235u.jpg',
+                'https://goldentech.cm.sa/media/catalog/product/cache/946540b9ae449ff2231a6d11d8e12a8d/l/a/labtop_lenovo_thinkpad_e14_gen_4_intel_core_i5-1235u.jpg',
             techName: 'Lenovo ThinkPad  ',
             price: 6499,
           ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:fruitapp/tech_store/home_screen.dart/home_screen.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -17,7 +16,7 @@ class SplashScreen extends StatelessWidget {
           Image.asset('lib/assets/lap.png',height: 400,width: double.infinity,),
           // Bilal deleted Positioned
           // if we have Text.rich for texts we don't need Row
-          Text.rich(
+          const Text.rich(
             TextSpan(
               children: [
                 TextSpan(

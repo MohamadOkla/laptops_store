@@ -11,7 +11,7 @@ class IphoneContainer extends StatefulWidget {
 class _IphoneContainerState extends State<IphoneContainer> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return const SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
