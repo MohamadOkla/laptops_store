@@ -35,6 +35,7 @@ class CustomCard extends StatelessWidget {
                   );
                 }
               },
+              
               // Add an error message and error icon if image loading fails
               errorBuilder: (context, error, stackTrace) {
                 return const Center(
