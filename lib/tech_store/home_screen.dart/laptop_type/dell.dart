@@ -11,7 +11,7 @@ class DellContainer extends StatefulWidget {
 class _DellContainerState extends State<DellContainer> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return const SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [

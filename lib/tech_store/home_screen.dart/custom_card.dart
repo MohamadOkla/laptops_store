@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {
+  final String urlImage;
+  final String techName;
+  final int price;
+
   const CustomCard({
     super.key,
     required this.urlImage,
@@ -8,67 +12,55 @@ class CustomCard extends StatelessWidget {
     required this.price,
   });
 
-  final String urlImage;
-  final String techName;
-  final double price;
-
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
-        border: Border.all(color: Colors.grey.shade300),
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 10,
-            color: Colors.grey.shade400,
-            offset: Offset(0, 4),
-          ),
-        ],
-      ),
-      width: 200,
-      height: 300,
+    return Card(
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(15),
-              topRight: Radius.circular(15),
-            ),
+          SizedBox(
+            height: 150,
+            width: 150,
             child: Image.network(
               urlImage,
               fit: BoxFit.cover,
-              height: 200,
-              width: double.infinity,
+
+              //Add an loading icon for image
+              loadingBuilder: (BuildContext context, Widget child,
+                  ImageChunkEvent? loadingProgress) {
+                if (loadingProgress == null) {
+                  return child;
+                } else {
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+              },
+              
+              // Add an error message and error icon if image loading fails
+              errorBuilder: (context, error, stackTrace) {
+                return const Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.error,
+                        color: Colors.red,
+                        size: 40,
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text('Not Found')
+                    ],
+                  ),
+                );
+              },
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  techName,
-                  style: TextStyle(
-                    color: Colors.black87,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  'Price :\$${price.toString()}',
-                  style: TextStyle(
-                    color: Colors.blueAccent,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16,
-                  ),
-                ),
-              ],
-            ),
-          ),
+          const SizedBox(height: 8),
+          Text(techName,
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+          Text('\$$price', style: TextStyle(color: Colors.grey[600])),
         ],
       ),
     );

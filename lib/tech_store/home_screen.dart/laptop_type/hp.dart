@@ -11,7 +11,7 @@ class HpContainer extends StatefulWidget {
 class _HpContainerState extends State<HpContainer> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return const SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [

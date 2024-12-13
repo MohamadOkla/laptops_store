@@ -31,64 +31,76 @@ class _HomeScreenState extends State<HomeScreen> {
           iconTheme: const IconThemeData(color: Colors.white),
           backgroundColor: Colors.blueAccent,
         ),
-        drawer: Drawer(
-          child: ListView(
-            children: [
-              const DrawerHeader(
-                child: Center(
-                  child: Text(
-                    'Tech Store',
-                    style: TextStyle(
-                      fontSize: 32,
-                      color: Colors.blueAccent,
-                      fontWeight: FontWeight.bold,
-                      shadows: [
-                        Shadow(
-                            offset: Offset(0, 2),
-                            blurRadius: 4,
-                            color: Colors.black)
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              ListTile(
-                onTap: () {
-                  Navigator.of(context).pop();
-                },
-                title: const Text(
-                  'Laptop',
-                  style: TextStyle(fontSize: 18),
-                ),
-                leading: IconButton(
-                  onPressed: () {},
-                  icon: const FaIcon(
-                    FontAwesomeIcons.laptop,
-                    color: Colors.blueAccent,
-                  ),
-                ),
-              ),
-              ListTile(
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => ViewMobiles(),
-                  ));
-                },
-                title: const Text(
-                  'Mobile',
-                  style: TextStyle(fontSize: 18),
-                ),
-                leading: IconButton(
-                  onPressed: () {},
-                  icon: const FaIcon(
-                    FontAwesomeIcons.mobileScreen,
-                    color: Colors.blueAccent,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
+        //A custom drawer widget might be the best option
+        drawer: const CustomDrawer(),
         body: const TechBody());
+  }
+}
+
+class CustomDrawer extends StatelessWidget {
+  const CustomDrawer({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        children: [
+          const DrawerHeader(
+            child: Center(
+              child: Text(
+                'Tech Store',
+                style: TextStyle(
+                  fontSize: 32,
+                  color: Colors.blueAccent,
+                  fontWeight: FontWeight.bold,
+                  shadows: [
+                    Shadow(
+                        offset: Offset(0, 2),
+                        blurRadius: 4,
+                        color: Colors.black)
+                  ],
+                ),
+              ),
+            ),
+          ),
+          ListTile(
+            onTap: () {
+              Navigator.of(context).pop();
+            },
+            title: const Text(
+              'Laptop',
+              style: TextStyle(fontSize: 18),
+            ),
+            leading: IconButton(
+              onPressed: () {},
+              icon: const FaIcon(
+                FontAwesomeIcons.laptop,
+                color: Colors.blueAccent,
+              ),
+            ),
+          ),
+          ListTile(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const ViewMobiles(),
+              ));
+            },
+            title: const Text(
+              'Mobile',
+              style: TextStyle(fontSize: 18),
+            ),
+            leading: IconButton(
+              onPressed: () {},
+              icon: const FaIcon(
+                FontAwesomeIcons.mobileScreen,
+                color: Colors.blueAccent,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

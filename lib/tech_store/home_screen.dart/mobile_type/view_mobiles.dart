@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:fruitapp/tech_store/home_screen.dart/mobile_type/infinix.dart';
 import 'package:fruitapp/tech_store/home_screen.dart/mobile_type/iphone.dart';
 import 'package:fruitapp/tech_store/home_screen.dart/mobile_type/redmi.dart';
@@ -17,7 +16,7 @@ class _ViewMobilesState extends State<ViewMobiles> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
         title: const Text(
           'Mobiles',
           style: TextStyle(color: Colors.white),
